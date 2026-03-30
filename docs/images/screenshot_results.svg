@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
+  <rect width="800" height="450" fill="#eef3f8"/>
+  <rect x="40" y="40" width="720" height="100" rx="12" fill="#264d82"/>
+  <rect x="40" y="170" width="340" height="210" rx="12" fill="#ffffff" stroke="#c8d3e1" stroke-width="2"/>
+  <rect x="420" y="170" width="340" height="210" rx="12" fill="#ffffff" stroke="#c8d3e1" stroke-width="2"/>
+  <rect x="70" y="220" width="280" height="20" rx="10" fill="#2f5c94"/>
+  <rect x="70" y="260" width="220" height="20" rx="10" fill="#7a9fd5"/>
+  <rect x="70" y="300" width="180" height="20" rx="10" fill="#b9c9e6"/>
+  <text x="60" y="90" fill="#ffffff" font-family="Arial, sans-serif" font-size="28" font-weight="700">Session Results</text>
+  <text x="430" y="220" fill="#3f566d" font-family="Arial, sans-serif" font-size="18">AI Feedback</text>
+  <text x="430" y="250" fill="#5b7088" font-family="Arial, sans-serif" font-size="16">- Score: 8.3/10</text>
+  <text x="430" y="280" fill="#5b7088" font-family="Arial, sans-serif" font-size="16">- Strengths: clarity, structure</text>
+  <text x="430" y="310" fill="#5b7088" font-family="Arial, sans-serif" font-size="16">- Improvements: more examples</text>
+</svg>

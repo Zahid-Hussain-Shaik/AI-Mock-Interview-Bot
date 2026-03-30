@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard — InterviewAI</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎯</text></svg>">
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <a href="/" class="navbar-brand">
+            <span class="icon">🎯</span>
+            <span>InterviewAI</span>
+        </a>
+        <div class="navbar-meta">
+            <span id="user-greeting">Loading...</span>
+            <span>•</span>
+            <a href="#" id="logout-btn" style="color: var(--accent-red);">Logout</a>
+        </div>
+    </nav>
+
+    <div class="container-wide">
+        <div class="dashboard-header fade-in">
+            <h1 class="dashboard-title">My Interviews</h1>
+            <a href="/" class="btn btn-primary">
+                + New Interview
+            </a>
+        </div>
+
+        <div class="dashboard-table-container fade-in fade-in-delay-1" id="table-container">
+            <div class="empty-state hidden" id="empty-state">
+                <div style="font-size: 3rem; margin-bottom: var(--space-md);">📝</div>
+                <h3 style="font-size: var(--font-xl); font-weight: 700; margin-bottom: var(--space-sm);">No Interviews Yet</h3>
+                <p style="color: var(--text-secondary); margin-bottom: var(--space-lg);">You haven't completed any mock interviews.</p>
+                <a href="/" class="btn btn-primary">Start Your First Interview</a>
+            </div>
+
+            <table class="dashboard-table hidden" id="interviews-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Role</th>
+                        <th>Level</th>
+                        <th>Context</th>
+                        <th>Status</th>
+                        <th>Score</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="interviews-body">
+                    <!-- Populated by JS -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <script src="/static/js/auth.js"></script>
+    <script src="/static/js/dashboard.js"></script>
+</body>
+</html>

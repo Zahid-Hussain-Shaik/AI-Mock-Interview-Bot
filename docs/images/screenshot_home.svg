@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
+  <rect width="800" height="450" fill="#f4f7fb"/>
+  <rect x="40" y="40" width="720" height="100" rx="12" fill="#2f5d91"/>
+  <rect x="40" y="170" width="340" height="200" rx="12" fill="#ffffff" stroke="#d1d9e6" stroke-width="2"/>
+  <rect x="420" y="170" width="340" height="200" rx="12" fill="#ffffff" stroke="#d1d9e6" stroke-width="2"/>
+  <text x="60" y="90" fill="#ffffff" font-family="Arial, sans-serif" font-size="28" font-weight="700">Dashboard</text>
+  <text x="60" y="220" fill="#65748b" font-family="Arial, sans-serif" font-size="20">Welcome to the interview dashboard</text>
+  <text x="430" y="220" fill="#65748b" font-family="Arial, sans-serif" font-size="20">Recent interview sessions and progress</text>
+</svg>

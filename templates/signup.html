@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up — InterviewAI</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎯</text></svg>">
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <a href="/" class="navbar-brand">
+            <span class="icon">🎯</span>
+            <span>InterviewAI</span>
+        </a>
+    </nav>
+
+    <div class="auth-container">
+        <div class="glass-card auth-card fade-in">
+            <div class="auth-header">
+                <h2 style="font-size: var(--font-3xl); font-weight: 800; margin-bottom: var(--space-sm);">Create Account</h2>
+                <p style="color: var(--text-secondary);">Start your mock interview journey today</p>
+            </div>
+            
+            <form id="signup-form">
+                <div class="form-group">
+                    <label class="form-label" for="signup-name">Full Name</label>
+                    <input type="text" class="form-input" id="signup-name" required placeholder="Jane Doe">
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="signup-email">Email Address</label>
+                    <input type="email" class="form-input" id="signup-email" required placeholder="you@example.com">
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="signup-password">Password</label>
+                    <input type="password" class="form-input" id="signup-password" required placeholder="At least 6 characters">
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="signup-confirm">Confirm Password</label>
+                    <input type="password" class="form-input" id="signup-confirm" required placeholder="••••••••">
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-lg btn-block mt-lg" id="signup-btn">
+                    <span id="signup-btn-text">Sign Up</span>
+                    <span id="signup-btn-spinner" class="spinner-inline hidden"></span>
+                </button>
+            </form>
+            
+            <p class="text-center mt-xl" style="font-size: var(--font-sm); color: var(--text-muted);">
+                Already have an account? <a href="/login">Log in here</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <script src="/static/js/auth.js"></script>
+</body>
+</html>

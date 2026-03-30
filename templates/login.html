@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In — InterviewAI</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎯</text></svg>">
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <a href="/" class="navbar-brand">
+            <span class="icon">🎯</span>
+            <span>InterviewAI</span>
+        </a>
+    </nav>
+
+    <div class="auth-container">
+        <div class="glass-card auth-card fade-in">
+            <div class="auth-header">
+                <h2 style="font-size: var(--font-3xl); font-weight: 800; margin-bottom: var(--space-sm);">Welcome Back</h2>
+                <p style="color: var(--text-secondary);">Log in to track your interview progress</p>
+            </div>
+            
+            <form id="login-form">
+                <div class="form-group">
+                    <label class="form-label" for="login-email">Email Address</label>
+                    <input type="email" class="form-input" id="login-email" required placeholder="you@example.com">
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="login-password">Password</label>
+                    <input type="password" class="form-input" id="login-password" required placeholder="••••••••">
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-lg btn-block mt-lg" id="login-btn">
+                    <span id="login-btn-text">Log In</span>
+                    <span id="login-btn-spinner" class="spinner-inline hidden"></span>
+                </button>
+            </form>
+            
+            <p class="text-center mt-xl" style="font-size: var(--font-sm); color: var(--text-muted);">
+                Don't have an account? <a href="/signup">Sign up here</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <script src="/static/js/auth.js"></script>
+</body>
+</html>

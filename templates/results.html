@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Your AI Mock Interview results — detailed performance analysis with scores, strengths, and improvement areas.">
+    <title>Interview Results — InterviewAI</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎯</text></svg>">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-brand">
+            <span class="icon">🎯</span>
+            <span>InterviewAI</span>
+        </div>
+        <div class="navbar-meta">
+            <span id="meta-role">—</span>
+            <span>•</span>
+            <span id="meta-level">—</span>
+            <span>•</span>
+            <a href="/dashboard" style="color: var(--text-primary); font-weight: 600;">Dashboard</a>
+        </div>
+    </nav>
+
+    <div class="container-wide">
+        <!-- Results Header -->
+        <div class="results-header">
+            <h1 class="results-title fade-in">Interview Complete 🎉</h1>
+            <p class="results-subtitle fade-in fade-in-delay-1" id="results-subtitle">
+                Here's your detailed performance breakdown
+            </p>
+        </div>
+
+        <!-- Score Ring -->
+        <div class="score-ring-container fade-in fade-in-delay-2">
+            <div class="score-ring">
+                <svg viewBox="0 0 200 200">
+                    <circle class="score-ring-bg" cx="100" cy="100" r="85"></circle>
+                    <circle class="score-ring-fill" id="score-ring-circle"
+                        cx="100" cy="100" r="85"
+                        stroke-dasharray="534"
+                        stroke-dashoffset="534">
+                    </circle>
+                </svg>
+                <div class="score-ring-text">
+                    <span class="score-ring-value" id="avg-score-display">0</span>
+                    <span class="score-ring-label">out of 10</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Performance Level -->
+        <div class="text-center mb-xl fade-in fade-in-delay-3">
+            <span class="badge" id="performance-badge" style="font-size: var(--font-base); padding: 8px 24px;">
+                Loading...
+            </span>
+        </div>
+
+        <!-- Stats Grid -->
+        <div class="stats-grid fade-in fade-in-delay-3" id="stats-grid">
+            <div class="glass-card stat-card">
+                <div class="stat-value" id="stat-avg">—</div>
+                <div class="stat-label">Average Score</div>
+            </div>
+            <div class="glass-card stat-card">
+                <div class="stat-value" id="stat-high">—</div>
+                <div class="stat-label">Highest Score</div>
+            </div>
+            <div class="glass-card stat-card">
+                <div class="stat-value" id="stat-low">—</div>
+                <div class="stat-label">Lowest Score</div>
+            </div>
+            <div class="glass-card stat-card">
+                <div class="stat-value" id="stat-total">—</div>
+                <div class="stat-label">Questions Answered</div>
+            </div>
+        </div>
+
+        <!-- Category Breakdown -->
+        <div class="glass-card-static category-chart fade-in fade-in-delay-4" id="category-section">
+            <h3 style="font-weight: 800; margin-bottom: var(--space-xl);">📊 Category Performance</h3>
+            <div id="category-bars"></div>
+        </div>
+
+        <!-- Question Results Accordion -->
+        <div class="mt-2xl">
+            <h3 class="fade-in" style="font-weight: 800; margin-bottom: var(--space-lg); font-size: var(--font-xl);">
+                📝 Detailed Question Breakdown
+            </h3>
+            <div class="results-list" id="results-list">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+
+        <!-- Key Insights -->
+        <div class="insights-grid" id="insights-section">
+            <div class="glass-card-static insight-card fade-in">
+                <h4 class="insight-title" style="color: var(--accent-green);">✅ Key Strengths</h4>
+                <ul class="insight-list strengths-list" id="key-strengths"></ul>
+            </div>
+            <div class="glass-card-static insight-card fade-in fade-in-delay-1">
+                <h4 class="insight-title" style="color: var(--accent-red);">⚠️ Areas to Improve</h4>
+                <ul class="insight-list weaknesses-list" id="key-weaknesses"></ul>
+            </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="text-center mt-2xl fade-in" style="padding-bottom: var(--space-xl);">
+            <a href="/" class="btn btn-primary btn-lg" id="restart-btn" style="margin-right: var(--space-md);">
+                🔄 Start New Interview
+            </a>
+            <button class="btn btn-secondary btn-lg" id="download-btn" type="button">
+                📥 Download Report
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Built with Flask &amp; Claude AI &bull; AI Mock Interview Bot</p>
+    </footer>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay active" id="loading-overlay">
+        <div class="spinner"></div>
+        <div class="loading-text">Loading your results...</div>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <!-- Pass session ID to JS -->
+    <script>
+        window.SESSION_ID = "{{ session_id }}";
+    </script>
+    <script src="/static/js/results.js"></script>
+</body>
+</html>

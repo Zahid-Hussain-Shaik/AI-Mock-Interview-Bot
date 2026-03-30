@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI-powered mock interview platform. Practice realistic interviews with instant AI feedback for Software Engineer, Data Scientist, Product Manager, and more.">
+    <title>AI Mock Interview Bot — Practice Smarter, Interview Better</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎯</text></svg>">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <a href="/" class="navbar-brand">
+            <span class="icon">🎯</span>
+            <span>InterviewAI</span>
+        </a>
+        <div class="navbar-meta">
+            {% if g.user %}
+                <a href="/dashboard" style="color: var(--text-primary); font-weight: 600;">Dashboard</a>
+            {% else %}
+                <a href="/login" style="color: var(--text-primary); font-weight: 600;">Log In</a>
+            {% endif %}
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-badge">
+                <span>✨</span>
+                <span>AI-Powered Interview Practice</span>
+            </div>
+            <h1 class="hero-title">
+                Ace Your Next<br>
+                <span class="gradient-text">Tech Interview</span>
+            </h1>
+            <p class="hero-subtitle">
+                Practice with realistic AI-generated questions tailored to your role and experience level. 
+                Get instant, detailed feedback on every answer.
+            </p>
+        </div>
+    </section>
+
+    <!-- Features Grid -->
+    <div class="container">
+        <div class="features-grid">
+            <div class="glass-card feature-card">
+                <span class="feature-icon">🤖</span>
+                <h3 class="feature-title">AI-Powered Questions</h3>
+                <p class="feature-desc">8–12 dynamic questions mixing technical, behavioral, and situational topics with progressive difficulty.</p>
+            </div>
+            <div class="glass-card feature-card">
+                <span class="feature-icon">📊</span>
+                <h3 class="feature-title">Instant Evaluation</h3>
+                <p class="feature-desc">Each answer scored 1–10 with specific strengths, weaknesses, and actionable improvement suggestions.</p>
+            </div>
+            <div class="glass-card feature-card">
+                <span class="feature-icon">🎯</span>
+                <h3 class="feature-title">Detailed Results</h3>
+                <p class="feature-desc">Comprehensive dashboard with category breakdowns, performance insights, and personalized recommendations.</p>
+            </div>
+        </div>
+
+        <!-- Interview Setup Form -->
+        <div class="form-section">
+            <div class="glass-card-static">
+                <h2 class="text-center mb-xl" style="font-size: var(--font-2xl); font-weight: 800;">
+                    Configure Your Interview
+                </h2>
+                <form id="interview-setup-form">
+                    <div class="form-group">
+                        <label class="form-label" for="role-select">Job Role</label>
+                        <select class="form-select" id="role-select" required>
+                            <option value="" disabled selected>Select your target role...</option>
+                            <option value="Software Engineer">Software Engineer</option>
+                            <option value="Frontend Developer">Frontend Developer</option>
+                            <option value="Backend Developer">Backend Developer</option>
+                            <option value="Full Stack Developer">Full Stack Developer</option>
+                            <option value="Data Scientist">Data Scientist</option>
+                            <option value="ML Engineer">ML Engineer</option>
+                            <option value="DevOps Engineer">DevOps Engineer</option>
+                            <option value="Cloud Architect">Cloud Architect</option>
+                            <option value="Product Manager">Product Manager</option>
+                            <option value="Data Analyst">Data Analyst</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="level-select">Experience Level</label>
+                        <select class="form-select" id="level-select" required>
+                            <option value="" disabled selected>Select your experience level...</option>
+                            <option value="Entry Level">Entry Level (0–2 years)</option>
+                            <option value="Mid Level">Mid Level (3–5 years)</option>
+                            <option value="Senior">Senior (6–10 years)</option>
+                            <option value="Lead/Principal">Lead / Principal (10+ years)</option>
+                        </select>
+                    </div>
+
+                    <!-- Custom Context (Optional) -->
+                    <div class="form-group mt-xl">
+                        <label class="form-label">Tailor Questions (Optional)</label>
+                        <p style="font-size: var(--font-sm); color: var(--text-muted); margin-bottom: var(--space-md);">
+                            Upload your resume or paste a job description to get highly personalized interview questions.
+                        </p>
+                        
+                        <!-- CV Upload -->
+                        <div class="form-group">
+                            <div class="file-drop-area" id="file-drop-area">
+                                <span style="font-size: 2rem; margin-bottom: 8px; display: block;">📄</span>
+                                <div id="file-drop-text">
+                                    <h4 class="file-drop-title">Upload Resume / CV</h4>
+                                    <p class="file-drop-desc">Drag & drop or click to browse (PDF, DOCX)</p>
+                                </div>
+                                <div class="file-preview" id="file-preview">
+                                    <span>✅</span>
+                                    <span id="file-name">filename.pdf</span>
+                                    <span id="remove-file" style="cursor: pointer; margin-left: 8px; color: var(--accent-red);">✖</span>
+                                </div>
+                                <input type="file" class="file-input" id="cv-upload" accept=".pdf,.docx,.txt" />
+                            </div>
+                        </div>
+
+                        <!-- JD Text -->
+                        <div class="form-group">
+                            <textarea 
+                                class="form-textarea" 
+                                id="jd-input" 
+                                placeholder="Paste the Job Description here..."
+                                style="min-height: 120px;"
+                            ></textarea>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-lg btn-block mt-lg" id="start-btn">
+                        <span id="start-btn-text">Start Interview</span>
+                        <span id="start-btn-spinner" class="spinner-inline hidden"></span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Built with Flask &amp; Claude AI &bull; AI Mock Interview Bot</p>
+    </footer>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loading-overlay">
+        <div class="spinner"></div>
+        <div class="loading-text" id="loading-text">Generating your interview questions...</div>
+        <div class="loading-subtext">This may take 10–20 seconds</div>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <script src="/static/js/setup.js"></script>
+</body>
+</html>
