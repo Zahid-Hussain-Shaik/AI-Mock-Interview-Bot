@@ -84,12 +84,14 @@ The app will be available at `http://127.0.0.1:5000`.
 
 Below are sample demo screenshots for the application. Replace these images with real screenshots as needed.
 
-![Home screen](docs/images/screenshot_home.svg)
+<img width="1895" height="872" alt="image" src="https://github.com/user-attachments/assets/89319a3c-03a6-4d60-a1b0-b4d9efe82b75" />
+
+<img width="1895" height="872" alt="image" src="https://github.com/user-attachments/assets/d394241f-9a8e-4082-ac65-cdd7b81e74e2" />
+<img width="1903" height="855" alt="image" src="https://github.com/user-attachments/assets/c91ace14-c747-481e-b3a9-ff75a2fe4ad5" />
+
+<img width="1892" height="841" alt="image" src="https://github.com/user-attachments/assets/8a209463-b37f-48fc-ba6f-d72c834f8f35" />
 
 
-![Interview session screen](docs/images/screenshot_interview.svg)
-
-![Results screen](docs/images/screenshot_results.svg)
 
 ## Notes
 
